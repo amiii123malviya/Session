@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <h1>Register</h1>
+    <form action="{% url 'home' %}" method="post">
+        {% csrf_token %}
+        Name: <input type="text" name="name">
+        <br>
+        Email: <input type="email" name="email">
+        <br>
+        Contact: <input type="number" name="contact">
+        <br>
+        Password: <input type="number" name="password">
+        <br>
+        <input type="submit" value="Register">
+    </form>
+    <button>
+        <a href="{% url 'login' %}">LOGIN</a>
+    </button>
+    {% endblock %}
+</body>
+</html>
